@@ -6,6 +6,8 @@
 #include <string.h>
 #include <unistd.h>
 
+#pragma once
+
 typedef char *string;
 
 const char *commands[] = {"exit", "echo", "type", "clear"};
