@@ -4,10 +4,6 @@
 
 # λ Lambda Shell
 
-[![Progress](https://backend.codecrafters.io/progress/shell/5bcf1c37-5310-42fc-8b3d-f5c087087cfc)](https://app.codecrafters.io/users/codecrafters-bot?r=2qF)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![C Standard](https://img.shields.io/badge/C-C23-blue.svg)](https://en.wikipedia.org/wiki/C23_(C_standard_revision))
-
 *A modern, lightweight POSIX-compliant shell built with C*
 
 **🚀 Part of the [CodeCrafters Shell Challenge](https://app.codecrafters.io/courses/shell/overview)**
@@ -64,7 +60,7 @@ lambda-shell/
    ```bash
    cmake . && make
    ```
-   
+
    Or use the build script:
    ```bash
    ./build.sh
