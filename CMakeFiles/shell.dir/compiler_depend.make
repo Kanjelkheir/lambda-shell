@@ -4,6 +4,9 @@
 CMakeFiles/shell.dir/src/main.c.o: src/main.c \
   src/utils/utils.h \
   /usr/include/alloca.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/asm/errno.h \
   /usr/include/bits/atomic_wide_counter.h \
   /usr/include/bits/byteswap.h \
   /usr/include/bits/confname.h \
@@ -12,6 +15,7 @@ CMakeFiles/shell.dir/src/main.c.o: src/main.c \
   /usr/include/bits/endian.h \
   /usr/include/bits/endianness.h \
   /usr/include/bits/environments.h \
+  /usr/include/bits/errno.h \
   /usr/include/bits/floatn-common.h \
   /usr/include/bits/floatn.h \
   /usr/include/bits/getopt_core.h \
@@ -64,11 +68,13 @@ CMakeFiles/shell.dir/src/main.c.o: src/main.c \
   /usr/include/ctype.h \
   /usr/include/dirent.h \
   /usr/include/endian.h \
+  /usr/include/errno.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
   /usr/include/inttypes.h \
+  /usr/include/linux/errno.h \
   /usr/include/linux/limits.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdint.h \
@@ -127,6 +133,8 @@ bin/shell: /usr/lib/Scrt1.o \
 
 /usr/include/stdint.h:
 
+/usr/include/linux/errno.h:
+
 /usr/include/inttypes.h:
 
 /usr/include/gnu/stubs.h:
@@ -149,13 +157,13 @@ CMakeFiles/shell.dir/src/main.c.o:
 
 /usr/include/bits/wchar.h:
 
-/usr/include/bits/stdint-least.h:
+/usr/include/bits/waitstatus.h:
 
-/usr/include/alloca.h:
+/usr/include/bits/waitflags.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h:
 
-/usr/include/bits/stdint-intn.h:
+/usr/include/bits/unistd_ext.h:
 
 /usr/lib/Scrt1.o:
 
@@ -164,6 +172,8 @@ CMakeFiles/shell.dir/src/main.c.o:
 /usr/include/bits/select.h:
 
 /usr/include/bits/types/__fpos64_t.h:
+
+/usr/include/bits/errno.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o:
 
@@ -185,19 +195,15 @@ src/utils/utils.h:
 
 /usr/include/bits/dirent_ext.h:
 
-/usr/include/bits/stdio_lim.h:
+/usr/include/bits/pthreadtypes.h:
 
-/usr/include/bits/types/struct_timeval.h:
+/usr/include/bits/floatn.h:
 
-/usr/lib/libc.so:
-
-/usr/include/bits/posix1_lim.h:
+/usr/include/bits/floatn-common.h:
 
 /usr/lib/ld-linux-x86-64.so.2:
 
 src/main.c:
-
-/usr/include/bits/floatn-common.h:
 
 /usr/lib/libreadline.so:
 
@@ -213,11 +219,21 @@ src/main.c:
 
 /usr/include/bits/timesize.h:
 
+/usr/include/asm/errno.h:
+
 /usr/include/bits/endian.h:
 
 /usr/include/bits/types/__sigset_t.h:
 
-/usr/include/bits/waitflags.h:
+/usr/include/alloca.h:
+
+/usr/include/bits/stdint-least.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/bits/types/__fpos_t.h:
 
 /usr/include/bits/dirent.h:
 
@@ -229,15 +245,23 @@ src/main.c:
 
 /usr/include/bits/time64.h:
 
+/usr/lib/libc.so:
+
+/usr/include/bits/posix1_lim.h:
+
 /usr/include/sys/select.h:
 
 /usr/include/bits/environments.h:
 
 /usr/include/bits/endianness.h:
 
-/usr/include/bits/pthreadtypes.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a:
 
-/usr/include/bits/floatn.h:
+/usr/include/bits/stdint-intn.h:
+
+/usr/include/bits/types/struct_timeval.h:
+
+/usr/include/bits/stdio_lim.h:
 
 /usr/include/bits/types/sigset_t.h:
 
@@ -257,13 +281,7 @@ src/main.c:
 
 /usr/include/bits/types/__FILE.h:
 
-/usr/include/bits/types/__fpos_t.h:
-
 /usr/include/bits/types/__locale_t.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h:
-
-/usr/include/bits/unistd_ext.h:
 
 /usr/include/bits/local_lim.h:
 
@@ -272,6 +290,8 @@ src/main.c:
 /usr/include/linux/limits.h:
 
 /usr/include/bits/types/clock_t.h:
+
+/usr/include/errno.h:
 
 /usr/include/bits/atomic_wide_counter.h:
 
@@ -298,5 +318,3 @@ src/main.c:
 /usr/include/bits/struct_rwlock.h:
 
 /usr/include/bits/types/time_t.h:
-
-/usr/include/bits/waitstatus.h:
