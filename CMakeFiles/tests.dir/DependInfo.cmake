@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/bilal/workspace/c/projects/codecrafters-shell-c/src/tests.c" "CMakeFiles/tests.dir/src/tests.c.o" "gcc" "CMakeFiles/tests.dir/src/tests.c.o.d"
+  "/home/bilal/workspace/c/projects/lambda-shell/src/tests.c" "CMakeFiles/tests.dir/src/tests.c.o" "gcc" "CMakeFiles/tests.dir/src/tests.c.o.d"
   "" "tests" "gcc" "CMakeFiles/tests.dir/link.d"
   )
 

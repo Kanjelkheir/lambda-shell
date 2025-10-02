@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/home/bilal/workspace/c/projects/codecrafters-shell-c/cmake_install.cmake"
+		"/home/bilal/workspace/c/projects/lambda-shell/cmake_install.cmake"
 	],
 	"Parallel" : false
 }
