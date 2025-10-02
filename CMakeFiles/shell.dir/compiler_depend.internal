@@ -5,6 +5,9 @@ CMakeFiles/shell.dir/src/main.c.o
  /home/bilal/workspace/c/projects/lambda-shell/src/main.c
  /home/bilal/workspace/c/projects/lambda-shell/src/utils/utils.h
  /usr/include/alloca.h
+ /usr/include/asm-generic/errno-base.h
+ /usr/include/asm-generic/errno.h
+ /usr/include/asm/errno.h
  /usr/include/bits/atomic_wide_counter.h
  /usr/include/bits/byteswap.h
  /usr/include/bits/confname.h
@@ -13,6 +16,7 @@ CMakeFiles/shell.dir/src/main.c.o
  /usr/include/bits/endian.h
  /usr/include/bits/endianness.h
  /usr/include/bits/environments.h
+ /usr/include/bits/errno.h
  /usr/include/bits/floatn-common.h
  /usr/include/bits/floatn.h
  /usr/include/bits/getopt_core.h
@@ -65,11 +69,13 @@ CMakeFiles/shell.dir/src/main.c.o
  /usr/include/ctype.h
  /usr/include/dirent.h
  /usr/include/endian.h
+ /usr/include/errno.h
  /usr/include/features-time64.h
  /usr/include/features.h
  /usr/include/gnu/stubs-64.h
  /usr/include/gnu/stubs.h
  /usr/include/inttypes.h
+ /usr/include/linux/errno.h
  /usr/include/linux/limits.h
  /usr/include/stdc-predef.h
  /usr/include/stdint.h
