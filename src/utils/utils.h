@@ -6,12 +6,16 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <errno.h>
 
 #pragma once
+
+#define HOME getenv("HOME")
 
 typedef char *string;
 
 const char *commands[] = {"exit", "echo", "type", "clear", "pwd"};
+
 
 typedef enum
 {
@@ -354,7 +358,7 @@ void trim(char *s) {
     while (s[i] == ' ') i++;
 
     // Shift characters to remove leading spaces
-    while (s[j++] = s[i++]);
+    while ((s[j++] = s[i++]));
 
     // Null-terminate the string
     s[j - 1] = '\0';
@@ -371,4 +375,53 @@ unsigned int get_working_directory(char* buf) {
     } else {
         return 0;
     }
+}
+
+
+/*
+ * Change the current directory into the argument
+ */
+void change_directory(const char* dir) {
+    if (chdir(dir) == 0) {
+        return;
+    } else {
+        printf("%s\n", strerror(errno));
+        return;
+    }
+}
+
+
+
+/*
+ * replace a substring with another string inside a string
+ */
+char* replaceSubstring(const char* str, const char* oldSub, const char* newSub) {
+    char* result;
+    int i, count = 0;
+    int newLen = strlen(newSub);
+    int oldLen = strlen(oldSub);
+
+    // Count occurrences of oldSub
+    for (i = 0; str[i] != '\0'; i++) {
+        if (strstr(&str[i], oldSub) == &str[i]) {
+            count++;
+            i += oldLen - 1; // Move past the old substring
+        }
+    }
+
+    // Allocate memory for the new string
+    result = (char*)malloc(i + count * (newLen - oldLen) + 1);
+    i = 0;
+
+    while (*str) {
+        if (strstr(str, oldSub) == str) {
+            strcpy(&result[i], newSub);
+            i += newLen;
+            str += oldLen;
+        } else {
+            result[i++] = *str++;
+        }
+    }
+    result[i] = '\0';
+    return result;
 }
