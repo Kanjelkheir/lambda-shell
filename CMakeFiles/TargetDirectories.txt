@@ -1,4 +1,10 @@
 /home/bilal/workspace/c/projects/lambda-shell/CMakeFiles/shell.dir
 /home/bilal/workspace/c/projects/lambda-shell/CMakeFiles/tests.dir
+/home/bilal/workspace/c/projects/lambda-shell/CMakeFiles/run-shell.dir
+/home/bilal/workspace/c/projects/lambda-shell/CMakeFiles/run-tests.dir
 /home/bilal/workspace/c/projects/lambda-shell/CMakeFiles/edit_cache.dir
 /home/bilal/workspace/c/projects/lambda-shell/CMakeFiles/rebuild_cache.dir
+/home/bilal/workspace/c/projects/lambda-shell/CMakeFiles/list_install_components.dir
+/home/bilal/workspace/c/projects/lambda-shell/CMakeFiles/install.dir
+/home/bilal/workspace/c/projects/lambda-shell/CMakeFiles/install/local.dir
+/home/bilal/workspace/c/projects/lambda-shell/CMakeFiles/install/strip.dir

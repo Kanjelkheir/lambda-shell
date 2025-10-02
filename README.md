@@ -62,18 +62,17 @@ lambda-shell/
 
 2. **Build the project**
    ```bash
-   ./your_program.sh
+   cmake . && make
    ```
-
-   Or manually:
+   
+   Or use the build script:
    ```bash
-   cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake
-   cmake --build ./build
+   ./build.sh
    ```
 
 3. **Start the shell**
    ```bash
-   ./build/shell
+   ./bin/shell
    ```
 
 4. **Start exploring!**
@@ -139,8 +138,12 @@ ls found in /bin/ls
 ### Running Tests
 
 ```bash
-cmake --build ./build
-./build/tests
+# Build and run tests
+./build.sh test
+
+# Or manually
+cmake . && make
+./bin/tests
 ```
 
 ### Code Structure

@@ -79,6 +79,8 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/shell.dir/clean
 clean: CMakeFiles/tests.dir/clean
+clean: CMakeFiles/run-shell.dir/clean
+clean: CMakeFiles/run-tests.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -144,6 +146,70 @@ CMakeFiles/tests.dir/codegen:
 CMakeFiles/tests.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/clean
 .PHONY : CMakeFiles/tests.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/run-shell.dir
+
+# All Build rule for target.
+CMakeFiles/run-shell.dir/all: CMakeFiles/shell.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run-shell.dir/build.make CMakeFiles/run-shell.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run-shell.dir/build.make CMakeFiles/run-shell.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/bilal/workspace/c/projects/lambda-shell/CMakeFiles --progress-num= "Built target run-shell"
+.PHONY : CMakeFiles/run-shell.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/run-shell.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bilal/workspace/c/projects/lambda-shell/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/run-shell.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bilal/workspace/c/projects/lambda-shell/CMakeFiles 0
+.PHONY : CMakeFiles/run-shell.dir/rule
+
+# Convenience name for target.
+run-shell: CMakeFiles/run-shell.dir/rule
+.PHONY : run-shell
+
+# codegen rule for target.
+CMakeFiles/run-shell.dir/codegen: CMakeFiles/shell.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run-shell.dir/build.make CMakeFiles/run-shell.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/bilal/workspace/c/projects/lambda-shell/CMakeFiles --progress-num= "Finished codegen for target run-shell"
+.PHONY : CMakeFiles/run-shell.dir/codegen
+
+# clean rule for target.
+CMakeFiles/run-shell.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run-shell.dir/build.make CMakeFiles/run-shell.dir/clean
+.PHONY : CMakeFiles/run-shell.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/run-tests.dir
+
+# All Build rule for target.
+CMakeFiles/run-tests.dir/all: CMakeFiles/tests.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run-tests.dir/build.make CMakeFiles/run-tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run-tests.dir/build.make CMakeFiles/run-tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/bilal/workspace/c/projects/lambda-shell/CMakeFiles --progress-num= "Built target run-tests"
+.PHONY : CMakeFiles/run-tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/run-tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bilal/workspace/c/projects/lambda-shell/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/run-tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bilal/workspace/c/projects/lambda-shell/CMakeFiles 0
+.PHONY : CMakeFiles/run-tests.dir/rule
+
+# Convenience name for target.
+run-tests: CMakeFiles/run-tests.dir/rule
+.PHONY : run-tests
+
+# codegen rule for target.
+CMakeFiles/run-tests.dir/codegen: CMakeFiles/tests.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run-tests.dir/build.make CMakeFiles/run-tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/bilal/workspace/c/projects/lambda-shell/CMakeFiles --progress-num= "Finished codegen for target run-tests"
+.PHONY : CMakeFiles/run-tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/run-tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run-tests.dir/build.make CMakeFiles/run-tests.dir/clean
+.PHONY : CMakeFiles/run-tests.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

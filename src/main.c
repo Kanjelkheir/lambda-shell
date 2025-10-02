@@ -3,14 +3,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-#pragma once
+
 
 #define echo(...) printf(__VA__ARGS__)
 #define flushbuf setbuf(stdout, NULL)
-int main(int argc, string argv[])
+int main(int argc __attribute__((unused)), string argv[] __attribute__((unused)))
 {
   // Read the PATH environment variables
-  const char *pathvar = getenv("PATH") ? getenv("PATH") : NULL;
+  const char *pathvar __attribute__((unused)) = getenv("PATH") ? getenv("PATH") : NULL;
 
   // Wait for user input
   char input[100];

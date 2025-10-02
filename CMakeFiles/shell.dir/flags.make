@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = 
+C_INCLUDES = -I/home/bilal/workspace/c/projects/lambda-shell/src
 
-C_FLAGS = -std=gnu2x
+C_FLAGS = -g -O0 -Wall -Wextra -Wpedantic -std=gnu17
 

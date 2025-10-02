@@ -2,8 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/tests.dir/link.d"
   "CMakeFiles/tests.dir/src/tests.c.o"
   "CMakeFiles/tests.dir/src/tests.c.o.d"
-  "tests"
-  "tests.pdb"
+  "bin/tests"
+  "bin/tests.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

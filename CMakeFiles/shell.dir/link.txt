@@ -1,1 +1,1 @@
-/usr/bin/cc -Wl,--dependency-file=CMakeFiles/shell.dir/link.d CMakeFiles/shell.dir/src/main.c.o -o shell  -lreadline
+/usr/bin/cc -g -O0 -Wall -Wextra -Wpedantic -Wl,--dependency-file=CMakeFiles/shell.dir/link.d CMakeFiles/shell.dir/src/main.c.o -o bin/shell  /usr/lib/libreadline.so
