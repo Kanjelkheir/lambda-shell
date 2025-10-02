@@ -1,0 +1,4 @@
+/home/bilal/workspace/c/projects/codecrafters-shell-c/CMakeFiles/shell.dir
+/home/bilal/workspace/c/projects/codecrafters-shell-c/CMakeFiles/tests.dir
+/home/bilal/workspace/c/projects/codecrafters-shell-c/CMakeFiles/edit_cache.dir
+/home/bilal/workspace/c/projects/codecrafters-shell-c/CMakeFiles/rebuild_cache.dir
