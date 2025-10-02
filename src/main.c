@@ -1,7 +1,12 @@
-#include "utils/utils.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "utils/utils.h"
+
+/*
+ * TODO:
+ * add an invalid command error on invalid commands
+ */
 
 
 
@@ -98,6 +103,20 @@ int main(int argc __attribute__((unused)), string argv[] __attribute__((unused))
       }
       free(args); // Free the array of pointers
       continue;   // Continue to next prompt after handling type command
+    }
+
+    if (strncmp(input, "pwd", 3) == 0) {
+        trim(input);
+        // check if the input is an invalid pwd command
+        if (strlen(input) == 3) {
+            // get the current directory
+            char directory[100];
+            int state = get_working_directory(directory);
+            if (state) {
+                printf("%s\n", directory);
+                continue;
+            }
+        }
     }
 
     // execute any other commands that are not shell built in's

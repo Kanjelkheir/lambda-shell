@@ -1,3 +1,4 @@
+#include <inttypes.h>
 #include <ctype.h>
 #include <dirent.h>
 #include <stdbool.h>
@@ -10,7 +11,7 @@
 
 typedef char *string;
 
-const char *commands[] = {"exit", "echo", "type", "clear"};
+const char *commands[] = {"exit", "echo", "type", "clear", "pwd"};
 
 typedef enum
 {
@@ -199,42 +200,42 @@ size_t len_argv(const char **arr)
 //     }
 // }
 
-char *trim(char *str)
-{
-  if (str == NULL)
-  {
-    return NULL;
-  }
+// char *trim(char *str)
+// {
+//   if (str == NULL)
+//   {
+//     return NULL;
+//   }
 
-  int len = strlen(str);
-  char *new_str = (char *)malloc(len + 1); // Max possible length
-  if (new_str == NULL)
-  {
-    return NULL;
-  }
+//   int len = strlen(str);
+//   char *new_str = (char *)malloc(len + 1); // Max possible length
+//   if (new_str == NULL)
+//   {
+//     return NULL;
+//   }
 
-  int j = 0;
-  for (int i = 0; i < len; i++)
-  {
-    if (!isspace((unsigned char)str[i]))
-    {
-      new_str[j++] = str[i];
-    }
-  }
-  new_str[j] = '\0'; // Null-terminate the new string
+//   int j = 0;
+//   for (int i = 0; i < len; i++)
+//   {
+//     if (!isspace((unsigned char)str[i]))
+//     {
+//       new_str[j++] = str[i];
+//     }
+//   }
+//   new_str[j] = '\0'; // Null-terminate the new string
 
-  // Reallocate to the actual size to save memory
-  char *final_str = (char *)realloc(new_str, j + 1);
-  if (final_str == NULL)
-  {
-    // If realloc fails, we still have new_str, so return that.
-    // This is a defensive measure, realloc to smaller size usually doesn't
-    // fail.
-    return new_str;
-  }
+//   // Reallocate to the actual size to save memory
+//   char *final_str = (char *)realloc(new_str, j + 1);
+//   if (final_str == NULL)
+//   {
+//     // If realloc fails, we still have new_str, so return that.
+//     // This is a defensive measure, realloc to smaller size usually doesn't
+//     // fail.
+//     return new_str;
+//   }
 
-  return final_str;
-}
+//   return final_str;
+// }
 
 bool isCommand(const char *command)
 {
@@ -340,4 +341,34 @@ int run_executable(const char *file_name)
   {
     return 1;
   }
+}
+
+
+/*
+ * trims a string whitespaces
+ */
+void trim(char *s) {
+    int i = 0, j = 0;
+
+    // Skip leading spaces
+    while (s[i] == ' ') i++;
+
+    // Shift characters to remove leading spaces
+    while (s[j++] = s[i++]);
+
+    // Null-terminate the string
+    s[j - 1] = '\0';
+}
+
+
+
+/*
+ * Returns the current working directory
+ */
+unsigned int get_working_directory(char* buf) {
+    if (getcwd(buf, sizeof(buf)) != NULL) {
+        return 1;
+    } else {
+        return 0;
+    }
 }
