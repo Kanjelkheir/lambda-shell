@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 #include "utils/utils.h"
 
 /*
@@ -14,6 +15,7 @@
 #define flushbuf setbuf(stdout, NULL)
 int main(int argc __attribute__((unused)), string argv[] __attribute__((unused)))
 {
+
   // Read the PATH environment variables
   const char *pathvar __attribute__((unused)) = getenv("PATH") ? getenv("PATH") : NULL;
 
@@ -117,6 +119,24 @@ int main(int argc __attribute__((unused)), string argv[] __attribute__((unused))
                 continue;
             }
         }
+    }
+
+    if (strncmp(input, "cd ", 3) == 0) {
+        // get the arguments
+        const char* in = slice_from(input, 3);
+        size_t n;
+        char** arguments = split(in, ' ', &n);
+        size_t length = len_argv((const char**)arguments);
+        if (length > 1 || length == 0) {
+            printf("cd: string not in pwd: %s", arguments[0]);
+            continue;
+        }
+
+        const char* path = arguments[0];
+
+        const char* dir = replaceSubstring(path, "~", HOME);
+
+        change_directory(dir);
     }
 
     // execute any other commands that are not shell built in's
