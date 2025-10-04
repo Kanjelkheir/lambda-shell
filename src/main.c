@@ -9,7 +9,7 @@
  * add an invalid command error on invalid commands
  */
 
-
+#pragma once;
 
 #define echo(...) printf(__VA__ARGS__)
 #define flushbuf setbuf(stdout, NULL)
@@ -107,36 +107,41 @@ int main(int argc __attribute__((unused)), string argv[] __attribute__((unused))
       continue;   // Continue to next prompt after handling type command
     }
 
-    if (strncmp(input, "pwd", 3) == 0) {
-        trim(input);
-        // check if the input is an invalid pwd command
-        if (strlen(input) == 3) {
-            // get the current directory
-            char directory[100];
-            int state = get_working_directory(directory);
-            if (state) {
-                printf("%s\n", directory);
-                continue;
-            }
+    if (strncmp(input, "pwd", 3) == 0)
+    {
+      trim(input);
+      // check if the input is an invalid pwd command
+      if (strlen(input) == 3)
+      {
+        // get the current directory
+        char directory[100];
+        int state = get_working_directory(directory);
+        if (state)
+        {
+          printf("%s\n", directory);
+          continue;
         }
+      }
     }
 
-    if (strncmp(input, "cd ", 3) == 0) {
-        // get the arguments
-        const char* in = slice_from(input, 3);
-        size_t n;
-        char** arguments = split(in, ' ', &n);
-        size_t length = len_argv((const char**)arguments);
-        if (length > 1 || length == 0) {
-            printf("cd: string not in pwd: %s", arguments[0]);
-            continue;
-        }
+    if (strncmp(input, "cd ", 3) == 0)
+    {
+      // get the arguments
+      const char *in = slice_from(input, 3);
+      size_t n;
+      char **arguments = split(in, ' ', &n);
+      size_t length = len_argv((const char **)arguments);
+      if (length > 1 || length == 0)
+      {
+        printf("cd: string not in pwd: %s", arguments[0]);
+        continue;
+      }
 
-        const char* path = arguments[0];
+      const char *path = arguments[0];
 
-        const char* dir = replaceSubstring(path, "~", HOME);
+      const char *dir = replaceSubstring(path, "~", HOME);
 
-        change_directory(dir);
+      change_directory(dir);
     }
 
     // execute any other commands that are not shell built in's
