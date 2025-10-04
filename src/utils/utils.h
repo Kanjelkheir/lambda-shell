@@ -16,7 +16,6 @@ typedef char *string;
 
 const char *commands[] = {"exit", "echo", "type", "clear", "pwd"};
 
-
 typedef enum
 {
   CMD_EXIT,
@@ -347,81 +346,93 @@ int run_executable(const char *file_name)
   }
 }
 
-
 /*
  * trims a string whitespaces
  */
-void trim(char *s) {
-    int i = 0, j = 0;
+void trim(char *s)
+{
+  int i = 0, j = 0;
 
-    // Skip leading spaces
-    while (s[i] == ' ') i++;
+  // Skip leading spaces
+  while (s[i] == ' ')
+    i++;
 
-    // Shift characters to remove leading spaces
-    while ((s[j++] = s[i++]));
+  // Shift characters to remove leading spaces
+  while ((s[j++] = s[i++]))
+    ;
 
-    // Null-terminate the string
-    s[j - 1] = '\0';
+  // Null-terminate the string
+  s[j - 1] = '\0';
 }
-
-
 
 /*
  * Returns the current working directory
  */
-unsigned int get_working_directory(char* buf) {
-    if (getcwd(buf, sizeof(buf)) != NULL) {
-        return 1;
-    } else {
-        return 0;
-    }
+unsigned int get_working_directory(char *buf)
+{
+  if (getcwd(buf, sizeof(buf)) != NULL)
+  {
+    return 1;
+  }
+  else
+  {
+    return 0;
+  }
 }
-
 
 /*
  * Change the current directory into the argument
  */
-void change_directory(const char* dir) {
-    if (chdir(dir) == 0) {
-        return;
-    } else {
-        printf("%s\n", strerror(errno));
-        return;
-    }
+void change_directory(const char *dir)
+{
+  if (chdir(dir) == 0)
+  {
+    return;
+  }
+  else
+  {
+    printf("%s\n", strerror(errno));
+    return;
+  }
 }
-
-
 
 /*
  * replace a substring with another string inside a string
  */
-char* replaceSubstring(const char* str, const char* oldSub, const char* newSub) {
-    char* result;
-    int i, count = 0;
-    int newLen = strlen(newSub);
-    int oldLen = strlen(oldSub);
+char *replaceSubstring(const char *str, const char *oldSub, const char *newSub)
+{
+  char *result;
+  int i, count = 0;
+  int newLen = strlen(newSub);
+  int oldLen = strlen(oldSub);
 
-    // Count occurrences of oldSub
-    for (i = 0; str[i] != '\0'; i++) {
-        if (strstr(&str[i], oldSub) == &str[i]) {
-            count++;
-            i += oldLen - 1; // Move past the old substring
-        }
+  // Count occurrences of oldSub
+  for (i = 0; str[i] != '\0'; i++)
+  {
+    if (strstr(&str[i], oldSub) == &str[i])
+    {
+      count++;
+      i += oldLen - 1; // Move past the old substring
     }
+  }
 
-    // Allocate memory for the new string
-    result = (char*)malloc(i + count * (newLen - oldLen) + 1);
-    i = 0;
+  // Allocate memory for the new string
+  result = (char *)malloc(i + count * (newLen - oldLen) + 1);
+  i = 0;
 
-    while (*str) {
-        if (strstr(str, oldSub) == str) {
-            strcpy(&result[i], newSub);
-            i += newLen;
-            str += oldLen;
-        } else {
-            result[i++] = *str++;
-        }
+  while (*str)
+  {
+    if (strstr(str, oldSub) == str)
+    {
+      strcpy(&result[i], newSub);
+      i += newLen;
+      str += oldLen;
     }
-    result[i] = '\0';
-    return result;
+    else
+    {
+      result[i++] = *str++;
+    }
+  }
+  result[i] = '\0';
+  return result;
 }
