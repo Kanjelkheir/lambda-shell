@@ -3,7 +3,6 @@
 #include <string.h>
 #include <unistd.h>
 #include "utils/utils.h"
-
 /*
  * TODO:
  * add an invalid command error on invalid commands
@@ -11,10 +10,16 @@
 
 #pragma once;
 
+
 #define echo(...) printf(__VA__ARGS__)
 #define flushbuf setbuf(stdout, NULL)
 int main(int argc __attribute__((unused)), string argv[] __attribute__((unused)))
 {
+  // check if the user is a is using a kernel built on top of UNIX
+  #ifdef __WIN32 
+    printf("Shell can only run on UNIX based operating systems.");
+  #endif
+
 
   // Read the PATH environment variables
   const char *pathvar __attribute__((unused)) = getenv("PATH") ? getenv("PATH") : NULL;
@@ -154,3 +159,4 @@ int main(int argc __attribute__((unused)), string argv[] __attribute__((unused))
   }
   return 0;
 }
+
